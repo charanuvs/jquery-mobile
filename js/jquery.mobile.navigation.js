@@ -515,6 +515,17 @@ define( [
 				contentType: settings.contentType,
 				dataType: "html",
 				success: function( html, textStatus, xhr ) {
+					
+					// Applying this change: https://github.com/jquery/jquery-mobile/commit/b0d9cc758a48f13321750d7409fb7655dcdf2b50
+					if (!/^text\/html\b/.test(xhr.getResponseHeader('Content-Type'))) {
+					    // Display error message for unsupported content type
+					    if (settings.showLoadMsg) {
+						// show error message
+						$.mobile.showPageLoadingMsg($.mobile.pageLoadErrorMessageTheme, $.mobile.pageLoadErrorMessage, true);
+					    }
+					    return;
+					}
+					
 					//pre-parse html to check for a data-url,
 					//use it as the new fileUrl, base path, etc
 					var all = $( "<div></div>" ),
