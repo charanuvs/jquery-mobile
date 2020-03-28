@@ -1,3 +1,6 @@
+I created this repository just to fix this vulnerability in 1.3.2
+https://snyk.io/vuln/SNYK-JS-JQUERYMOBILE-174599
+
 # jQuery Mobile [![Build Status](https://travis-ci.org/jquery/jquery-mobile.png?branch=1.3-stable)](https://travis-ci.org/jquery/jquery-mobile)
 
 This is the main repository for the jQuery Mobile project. From the [official website](http://jquerymobile.com):
